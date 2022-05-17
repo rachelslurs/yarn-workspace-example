@@ -1,0 +1,1 @@
+process.env.PICO_API_URL = 'https://api.dev.pico.tools'

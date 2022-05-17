@@ -1,0 +1,36 @@
+{
+  "name": "yarn-workspace-example",
+  "workspaces": [
+    "packages/**/*",
+    "products/*"
+  ],
+  "dependencies": {
+    "@yarnpkg/pnpify": "3.1.1",
+    "core-js": "^3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@commitlint/cli": "16.1.0",
+    "@commitlint/config-conventional": "16.0.0",
+    "@rachelslurs/config": "workspace:^",
+    "@rachelslurs/package": "workspace:^",
+    "babel-core": "^7.0.0-bridge.0",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0"
+  },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
+  "scripts": {
+    "lint": "yarn packages lint",
+    "packages": "yarn workspaces foreach --topological-dev --verbose --no-private",
+    "packages:clean": "yarn packages run clean:compile",
+    "packages:build": "yarn packages build",
+    "packages:publish": "yarn packages npm publish --access restricted --tolerate-republish",
+    "test": "NODE_ENV=test yarn packages run test:each",
+    "test:all-no-cache": "yarn test --no-cache",
+    "test:coverage": "yarn test --coverage",
+    "test:clear-cache": "yarn test --clearCache"
+  },
+  "packageManager": "yarn@3.2.0"
+}

@@ -1,0 +1,65 @@
+{
+  "name": "@rachelslurs/package",
+  "version": "0.0.11",
+  "displayName": "package",
+  "description": "Contains bundling scripts for our javascript/scss packages",
+  "files": [
+    "README.md",
+    "package.json",
+    "dist/**/*"
+  ],
+  "homepage": "https://github.com/rachelslurs/yarn-workspace-example",
+  "exports": {
+    ".": {
+      "module": "./dist/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "@rachelslurs:registry": "https://npm.pkg.github.com",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachelslurs/yarn-workspace-example.git",
+    "directory": "packages/package"
+  },
+  "dependencies": {
+    "@yarnpkg/pnpify": "3.1.1",
+    "core-js": "^3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.16.10",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@rollup/plugin-babel": "5.3.1",
+    "@rollup/plugin-commonjs": "21.0.2",
+    "@rollup/plugin-json": "4.1.0",
+    "@rollup/plugin-node-resolve": "13.1.3",
+    "babel-loader": "^8.2.3",
+    "cssnano": "5.1.7",
+    "postcss": "^8.4.12",
+    "postcss-copy-assets": "0.3.1",
+    "postcss-reporter": "7.0.5",
+    "rollup": "2.68.0",
+    "rollup-plugin-copy": "3.4.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-postcss-treeshakeable": "1.0.1",
+    "rollup-plugin-sourcemaps": "0.6.3",
+    "rollup-plugin-terser": "7.0.0",
+    "sass": "1.51.0"
+  },
+  "scripts": {
+    "build": "run build:compile",
+    "build:compile": "echo ${INIT_CWD} && echo $npm_package_name && echo $INIT_CWD && pnpify rollup --environment INIT_CWD=${INIT_CWD} --config ./src/index.js",
+    "clean": "run clean:compile",
+    "clean:compile": "echo 'clean:compiling' && rm -rf ${INIT_CWD}/dist && rm -rf ${INIT_CWD}/coverage",
+    "prepack": "NODE_ENV='production' yarn build"
+  },
+  "packageManager": "yarn@3.2.0"
+}

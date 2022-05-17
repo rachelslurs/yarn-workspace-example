@@ -1,0 +1,82 @@
+{
+  "name": "@rachelslurs/config",
+  "version": "0.0.10",
+  "displayName": "config",
+  "description": "Contains defaults for babel, eslint, jest, etc. For now, just a babel config!",
+  "files": [
+    "README.md",
+    "package.json",
+    "dist/**/*"
+  ],
+  "homepage": "https://github.com/rachelslurs/yarn-workspace-example",
+  "exports": {
+    ".": {
+      "module": "./dist/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./babel": {
+      "module": "./dist/babel/index.js",
+      "require": "./dist/cjs/babel/index.js"
+    },
+    "./testUtils": {
+      "module": "./dist/testUtils/index.js",
+      "require": "./dist/cjs/testUtils/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "@rachelslurs:registry": "https://npm.pkg.github.com",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachelslurs/yarn-workspace-example.git",
+    "directory": "packages/config"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.17.2",
+    "@babel/runtime-corejs3": "^7.17.2",
+    "@yarnpkg/pnpify": "3.1.1",
+    "core-js": "^3",
+    "create-require": "1.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/eslint-plugin": "^7.14.5",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.16.10",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@rachelslurs/package": "workspace:^",
+    "@testing-library/dom": "^8.11.3",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-jest": "^27.4.6",
+    "babel-loader": "^8.2.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "3.6.2",
+    "eslint": "^7.32.0",
+    "eslint-plugin-tree-shaking": "1.10.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.7",
+    "leaked-handles": "5.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-select-event": "^5.5.0",
+    "redux-mock-store": "^1.5.4"
+  },
+  "scripts": {
+    "build": "run build:compile",
+    "clean": "run clean:compile",
+    "lint": "eslint",
+    "prepack": "NODE_ENV='production' yarn build",
+    "test:each": "cd ${INIT_CWD} && pnpify jest --config ${INIT_CWD}/jest.config.js",
+    "test:all-coverage": "cd ${PROJECT_CWD} && pnpify jest --config ${PROJECT_CWD}/jest.config.js --collectCoverage --no-cache"
+  },
+  "packageManager": "yarn@3.2.0"
+}

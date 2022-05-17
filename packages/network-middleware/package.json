@@ -1,0 +1,47 @@
+{
+    "name": "@rachelslurs/network-middleware",
+    "displayName": "network-middleware",
+    "description": "Be ware, net!!",
+    "version": "1.7.11",
+    "repository": {
+        "type": "git",
+        "url": "https://git@github.com/rachelslurs/yarn-workspace-example.git",
+        "directory": "packages/network-middleware"
+    },
+    "homepage": "https://github.com/rachelslurs/yarn-workspace-example",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/index.js",
+    "files": [
+        "README.md",
+        "package.json",
+        "dist/**/*"
+    ],
+    "dependencies": {
+        "axios": "0.24.0",
+        "broadcast-channel": "^3.1.0",
+        "jwt-decode": "^2.2.0",
+        "store2": "^2.12.0",
+        "uuid": "^3.4.0"
+    },
+    "devDependencies": {
+        "@rachelslurs/config": "workspace:^",
+        "redux": ">=4.0.5",
+        "redux-saga": "^1.1.3"
+    },
+    "peerDependencies": {
+        "redux": ">=4.0.5",
+        "redux-saga": "^1.1.3"
+    },
+    "scripts": {
+        "build": "run build:compile",
+        "clean": "run clean:compile",
+        "postpack": "run clean:compile",
+        "prepack": "NODE_ENV='production' yarn build"
+    },
+    "packageManager": "yarn@3.2.0",
+    "publishConfig": {
+        "@rachelslurs:registry": "https://npm.pkg.github.com",
+        "directory": "dist"
+    },
+    "sideEffects": false
+}

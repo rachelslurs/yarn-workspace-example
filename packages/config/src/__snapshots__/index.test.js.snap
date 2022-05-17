@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`config to match config object keys 1`] = `
+Array [
+  "babel",
+  "babelPath",
+  "jestConfigBase",
+  "createRequire",
+  "requireFromConfig",
+  "environmentVars",
+  "enzyme",
+  "enzymeAdapter",
+  "testUtils",
+]
+`;

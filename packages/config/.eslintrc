@@ -1,0 +1,10 @@
+// https://bluepnume.medium.com/javascript-tree-shaking-like-a-pro-7bf96e139eb7
+// https://github.com/lukastaegert/eslint-plugin-tree-shaking
+{
+    "plugins": [
+        "tree-shaking"
+    ],
+    "rules": {
+        "tree-shaking/no-side-effects-in-initialization": 2
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "comment": "This is an auto-generated file, it keeps track of whats been built. This is a local file, don't store this in version control.",
+  "packages": {
+    "packages/package#build": {
+      "lastModified": 1652757817027.4087,
+      "status": "succeeded",
+      "haveCheckedForRerun": true,
+      "rerun": false,
+      "command": "build"
+    },
+    "packages/config#build": {
+      "lastModified": 1652758587397.3262,
+      "status": "succeeded",
+      "haveCheckedForRerun": true,
+      "rerun": false,
+      "command": "build"
+    },
+    "packages/network-middleware#build": {
+      "lastModified": 1652758650002.7676,
+      "status": "succeeded",
+      "haveCheckedForRerun": true,
+      "rerun": false,
+      "command": "build"
+    },
+    "products/dashboard#build": {
+      "lastModified": 1652758640778.5706,
+      "status": "succeeded",
+      "haveCheckedForRerun": true,
+      "rerun": false,
+      "command": "build"
+    }
+  }
+}
